@@ -1,0 +1,11 @@
+all:  sip
+build: clean
+	g++ main.cpp word.cpp -o main
+
+clean: 
+	rm -rf main
+	rm -rf sip.d
+sip: build
+	mkdir -p sip.d
+	/usr/bin/sip -c sip.d word.sip
+
